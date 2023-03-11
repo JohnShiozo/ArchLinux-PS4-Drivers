@@ -1,14 +1,22 @@
-diff -ruN xf86-video-amdgpu-git/src/amdgpu_kms.c xf86-video-amdgpu-git-mod/src/amdgpu_kms.c
---- xf86-video-amdgpu-git/src/amdgpu_kms.c	2020-05-26 12:49:51.524700000 +0200
-+++ xf86-video-amdgpu-git-mod/src/amdgpu_kms.c	2020-05-26 12:54:22.101383288 +0200
-@@ -1681,8 +1681,8 @@
+diff --unified --recursive --text xf86-video-amdgpu-23.0.0/src/amdgpu_kms.c xf86-video-amdgpu-23.0.0-altered/src/amdgpu_kms.c
+--- xf86-video-amdgpu-23.0.0/src/amdgpu_kms.c	2023-02-22 14:14:50.000000000 -0300
++++ xf86-video-amdgpu-23.0.0-altered/src/amdgpu_kms.c	2023-03-11 17:21:23.966257353 -0300
+@@ -1510,14 +1510,14 @@
+ 	else if (info->family < AMDGPU_FAMILY_CI)
  		info->cursor_w = CURSOR_WIDTH;
- 		info->cursor_h = CURSOR_HEIGHT;
- 	} else {
+ 	else
 -		info->cursor_w = CURSOR_WIDTH_CIK;
--		info->cursor_h = CURSOR_HEIGHT_CIK;
 +		info->cursor_w = CURSOR_WIDTH;
-+		info->cursor_h = CURSOR_HEIGHT;
- 	}
  
- 	amdgpu_query_heap_size(pAMDGPUEnt->pDev, AMDGPU_GEM_DOMAIN_GTT,
+ 	if (drmGetCap(fd, DRM_CAP_CURSOR_HEIGHT, &value) == 0)
+ 		info->cursor_h = value;
+ 	else if (info->family < AMDGPU_FAMILY_CI)
+ 		info->cursor_h = CURSOR_HEIGHT;
+ 	else
+-		info->cursor_h = CURSOR_HEIGHT_CIK;
++		info->cursor_h = CURSOR_HEIGHT;
+ }
+ 
+ /* When the root window is mapped, set the initial modes */
+Only in xf86-video-amdgpu-23.0.0-altered/src: amdgpu_kms.c.orig
+Only in xf86-video-amdgpu-23.0.0-altered/src: amdgpu_kms.c.rej

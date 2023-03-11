@@ -1,9 +1,9 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
-# PS4 Maintainer: Whitehax0r
+# PS4 Maintainer: joaoshiozo
 
 pkgname=libdrm-ps4
 _pkgname=libdrm
-pkgver=2.4.113
+pkgver=2.4.115
 pkgrel=1
 pkgdesc="Userspace interface to kernel DRM services for PS4 version"
 url="https://dri.freedesktop.org/"

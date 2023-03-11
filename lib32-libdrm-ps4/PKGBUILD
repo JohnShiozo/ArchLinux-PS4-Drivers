@@ -1,10 +1,10 @@
 # Maintainer: Laurent Carlier <lordheavym@gmail.com>
 # Contributor: Jan de Groot <jgc@archlinux.org>
-# PS4 Maintainer: Whitehax0r
+# PS4 Maintainer: joaoshiozo
 
 pkgname=lib32-libdrm-ps4
 _pkgbasename=libdrm
-pkgver=2.4.113
+pkgver=2.4.115
 pkgrel=1
 pkgdesc="Userspace interface to kernel DRM services (32-bit)"
 url="https://dri.freedesktop.org/"

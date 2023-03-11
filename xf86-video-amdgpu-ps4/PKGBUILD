@@ -3,7 +3,7 @@
 
 pkgname=xf86-video-amdgpu-ps4
 _pkgname=xf86-video-amdgpu
-pkgver=22.0.0
+pkgver=23.0.0
 pkgrel=1
 pkgdesc="X.org amdgpu video driver for PS4 version"
 arch=('x86_64')

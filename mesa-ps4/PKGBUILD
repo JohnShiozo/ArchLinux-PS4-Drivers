@@ -13,13 +13,13 @@
 
 pkgname=mesa-ps4
 pkgdesc="an open-source implementation of the OpenGL specification, PS4 version"
-pkgver=22.1.7
+pkgver=23.0.0
 pkgrel=1
 arch=('x86_64')
 makedepends=('git' 'python-mako' 'xorgproto'
               'libxml2' 'libx11'  'libvdpau' 'libva' 'elfutils' 'libxrandr'
               'directx-headers' 'wayland-protocols' 'meson' 'ninja' 'glslang' 'libclc')
-depends=('libdrm' 'libxxf86vm' 'libxdamage' 'libxshmfence' 'libelf'
+depends=('libxxf86vm' 'libxdamage' 'libxshmfence' 'libelf'
          'libomxil-bellagio' 'libunwind' 'libglvnd' 'wayland' 'lm_sensors' 'libclc' 'vulkan-icd-loader' 'zstd' 'expat')
 optdepends=('opengl-man-pages: for the OpenGL API man pages')
 provides=('mesa' 'opencl-mesa' 'vulkan-intel' 'vulkan-radeon' 'vulkan-mesa-layer' 'libva-mesa-driver' 'mesa-vdpau' 'vulkan-swrast' 'vulkan-driver' 'mesa-libgl' 'opengl-driver' 'opencl-driver')
@@ -71,8 +71,8 @@ case $MESA_WHICH_LLVM in
         ;;
     4)
         # extra/llvm
-        makedepends+=(llvm=14.0.6 clang=14.0.6)
-        depends+=(llvm-libs=14.0.6)
+        makedepends+=(llvm=15.0.7 clang=15.0.7)
+        depends+=(llvm-libs=15.0.7)
         optdepends+=('clang: opencl' 'compiler-rt: opencl')
         ;;
     *)
@@ -108,7 +108,6 @@ build () {
        -D gallium-va=enabled \
        -D gallium-vdpau=enabled \
        -D gallium-xa=enabled \
-       -D gallium-xvmc=disabled \
        -D gbm=enabled \
        -D gles1=disabled \
        -D gles2=enabled \

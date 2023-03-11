@@ -9,17 +9,17 @@
 # Contributor: Thomas Dziedzic < gostrc at gmail >
 # Contributor: Antti "Tera" Oja <antti.bofh@gmail.com>
 # Contributor: Diego Jose <diegoxter1006@gmail.com>
-# PS4 Maintainer: Whitehax0r
+# PS4 Maintainer: joaoshiozo
 
 pkgname=lib32-mesa-ps4
 pkgdesc="an open-source implementation of the OpenGL specification, PS4 version"
-pkgver=22.1.7
+pkgver=23.0.0
 pkgrel=1
 arch=('x86_64')
 makedepends=('python-mako' 'lib32-libxml2' 'lib32-libx11' 'xorgproto'
              'lib32-libvdpau' 'git' 'lib32-libglvnd' 'wayland-protocols' 
              'meson' 'lib32-libva' 'lib32-libxrandr')
-depends=('mesa' 'lib32-gcc-libs' 'lib32-libdrm' 'lib32-wayland' 'lib32-libxxf86vm' 
+depends=('mesa' 'lib32-gcc-libs' 'lib32-libdrm-ps4' 'lib32-wayland' 'lib32-libxxf86vm'
          'lib32-libxdamage' 'lib32-libxshmfence' 'lib32-libelf' 'lib32-libunwind' 
          'lib32-lm_sensors' 'glslang' 'lib32-vulkan-icd-loader' 'lib32-zstd')
 optdepends=('opengl-man-pages: for the OpenGL API man pages')
@@ -74,8 +74,8 @@ case $MESA_WHICH_LLVM in
         ;;
     4)
         # extra/llvm
-        makedepends+=(lib32-llvm=14.0.6)
-        depends+=(lib32-llvm-libs=14.0.6)
+        makedepends+=(lib32-llvm=15.0.7)
+        depends+=(lib32-llvm-libs=15.0.7)
         ;;
     *)
 esac
@@ -118,7 +118,6 @@ build () {
         -D gallium-va=enabled \
         -D gallium-vdpau=enabled \
         -D gallium-xa=enabled \
-        -D gallium-xvmc=disabled \
         -D gbm=enabled \
         -D gles1=disabled \
         -D gles2=enabled \
